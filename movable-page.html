@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>会动的页面</title>
+  <style id="styleTag"></style>
+</head>
+<body>
+  <pre id="code"></pre>
+
+  <script>
+  	var str = `
+  	  body{
+  	    background: red;
+  	  }
+  	`
+
+  	var n=0
+  	var id = setInterval(() => {
+  	  n++
+  	  code.innerHTML = str.substring(0,n)
+  	  styleTag.innerHTML = str.substring(0,n)
+  	  console.log(str.substring(0,n))
+  	  if(n >= str.length){
+  	    window.clearInterval(id)
+  	  }
+  	},100)
+  </script>
+</body>
+</html>
